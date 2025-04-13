@@ -1,0 +1,8 @@
+local Quests = require(game:GetService("ReplicatedStorage").Modules.Quests)
+Quests.new("Pickable", workspace.QuestsParts, "Pick up")
+game.Players.PlayerAdded:Connect(function(plr)
+	plr.CharacterAdded:Connect(function(char)
+		Quests.new("Die", nil, char)
+	end)
+end)
+Quests.new("Stand", workspace.kek)
